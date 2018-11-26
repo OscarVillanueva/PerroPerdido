@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PerroPerdido</string>
+    <string name="main_title">PERRO PERDIDO</string>
+    <string name="description_image">Imagen del perro</string>
+    <string name="button_register">REGISTRAR PERRO PERDIDO</string>
+    <string name="button_list">VER LISTA DE PERROS PERDIDOS</string>
+    <string name="buttonFoto_register">REGISTRAR</string>
+    <string name="description_do">Descripción del perro</string>
+    <string name="dog_find">Foto del perro encontrado</string>
+</resources>

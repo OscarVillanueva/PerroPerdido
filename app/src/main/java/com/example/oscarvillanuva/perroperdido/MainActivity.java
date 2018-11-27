@@ -5,15 +5,36 @@ import android.graphics.Bitmap;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
     private Bitmap picture;
+    private Button button;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                takePicture();
+            }
+        });
+    }
+
+    private void toFotoActivity()
+    {
+        Intent intent = new Intent(this, Foto.class);
+        intent.putExtra("picture", picture);
+        startActivity(intent);
     }
 
     private void takePicture()
@@ -28,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK)
+        {
             picture = (Bitmap) data.getExtras().get("data");
+            toFotoActivity();
+        }
     }
 }

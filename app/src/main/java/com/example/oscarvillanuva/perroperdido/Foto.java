@@ -27,7 +27,8 @@ public class Foto extends AppCompatActivity
     {
         Bundle extras = getIntent().getExtras();
 
-        if (extras != null)
+        if (extras != null) {
             picture = extras.getParcelable("picture");
+        }
     }
 }
